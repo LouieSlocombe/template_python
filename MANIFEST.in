@@ -1,0 +1,2 @@
+recursive-include template_python/data *
+include README.md
