@@ -1,3 +1,45 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "template_python"
+version = "0.0.1"
+description = "Template"
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.12"
+license = { text = "MIT" }
+
+authors = [
+  { name = "Louie Slocombe", email = "louies@hotmail.co.uk" },
+]
+
+dependencies = [
+  "numpy",
+]
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "pytest-cov",
+]
+
+[project.urls]
+Homepage = "https://github.com/LouieSlocombe/template_python"
+Repository = "https://github.com/LouieSlocombe/template_python"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["template_python", "template_python.*"]
+
+[tool.setuptools.package-data]
+"template_python" = ["data/*"]
