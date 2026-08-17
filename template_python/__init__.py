@@ -1,3 +1,9 @@
-from .main import print_hello, line
+"""Public package interface."""
 
-__version__ = "0.0.0"
+from importlib.metadata import version
+
+from .main import line, print_hello
+
+__version__ = version("template-python")
+
+__all__ = ["__version__", "line", "print_hello"]

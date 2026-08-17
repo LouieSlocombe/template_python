@@ -1,16 +1,9 @@
-name: template
+name: template-python
 
 channels:
   - conda-forge
   - nodefaults
 
 dependencies:
-  - python>=3.14.*
-  - pip
-  - pytest
-  - pandas
-  - numpy
-  - scipy
-  - matplotlib
-  - pip:
-      - ...
+  - python>=3.14
+  - pip>=25.1
