@@ -22,7 +22,7 @@ classifiers = [
   "Typing :: Typed",
 ]
 dependencies = [
-  "numpy>=2.3.3",
+  "numpy>=2.5.2",
 ]
 
 [project.scripts]
