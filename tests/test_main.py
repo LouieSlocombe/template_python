@@ -52,3 +52,12 @@ def test_cli_prints_a_greeting(capsys: pytest.CaptureFixture[str]) -> None:
     """The console entry point delegates to the public API."""
     assert main(["Grace"]) == 0
     assert capsys.readouterr().out == "Hello, Grace!\n"
+
+
+def test_cli_reports_its_version(capsys: pytest.CaptureFixture[str]) -> None:
+    """The --version flag prints the package version and exits cleanly."""
+    with pytest.raises(SystemExit) as exit_info:
+        main(["--version"])
+
+    assert exit_info.value.code == 0
+    assert capsys.readouterr().out == f"{__version__}\n"
