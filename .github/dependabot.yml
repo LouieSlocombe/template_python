@@ -5,8 +5,32 @@ updates:
     directory: "/"
     schedule:
       interval: monthly
+    cooldown:
+      default-days: 7
+    groups:
+      github-actions:
+        patterns: ["*"]
 
-  - package-ecosystem: pip
+  # Keep the lower bounds in pyproject.toml as the oldest supported versions
+  # and refresh only uv.lock, which pins what development and CI use.
+  - package-ecosystem: uv
     directory: "/"
     schedule:
       interval: monthly
+    versioning-strategy: lockfile-only
+    cooldown:
+      default-days: 7
+    groups:
+      python:
+        patterns: ["*"]
+        update-types: [minor, patch]
+
+  - package-ecosystem: pre-commit
+    directory: "/"
+    schedule:
+      interval: monthly
+    cooldown:
+      default-days: 7
+    groups:
+      pre-commit:
+        patterns: ["*"]
