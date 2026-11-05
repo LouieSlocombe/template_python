@@ -85,10 +85,10 @@ once a month, grouping each into a single pull request.
 ### Continuous integration
 
 Every push to `main` and every pull request runs the hooks and mypy, tests on
-Linux, macOS, and Windows with Python 3.14 and the upcoming 3.15, tests the
-free-threaded 3.14t build and the oldest allowed dependencies, and builds and
-smoke tests the sdist and wheel. Require the **All checks passed** job in
-branch protection rather than each matrix entry.
+Linux with Python 3.14, tests the free-threaded 3.14t build and the oldest
+allowed dependencies, and builds and smoke tests the sdist and wheel.
+Require the **All checks passed** job in branch protection rather than each
+matrix entry.
 
 ## Releasing
 
